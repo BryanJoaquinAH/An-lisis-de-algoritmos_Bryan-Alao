@@ -123,6 +123,6 @@ El análisis condicional mejora nuestra comprensión del rendimiento en contexto
 Las estructuras de control como secuencias y bucles afectan directamente la eficiencia de los algoritmos, y su análisis permite estimar la complejidad total del programa.
 ## 📎 Recursos adicionales
 
-Big O Notation Explained Visually
-Notación Asintótica – GeeksforGeeks
-CS50 Notes – Week 5
+
+[Notación Asintótica – GeeksforGeeks](https://www.geeksforgeeks.org/worst-average-and-best-case-analysis-of-algorithms/)
+
