@@ -136,3 +136,13 @@ public class MergeSort {
 }
 
 ```
+## ✅ Conclusiones
+
+La notación asintótica permite clasificar y comparar algoritmos en función de su eficiencia.
+El caso promedio es útil, pero requiere conocimiento estadístico de las entradas.
+Herramientas como Merge Sort ayudan a ver la eficiencia teórica reflejada en la práctica.
+## 📎 Recursos útiles
+
+- [Big O Cheat Sheet](https://www.bigocheatsheet.com/)
+
+
