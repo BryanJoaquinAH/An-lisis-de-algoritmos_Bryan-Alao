@@ -1,116 +1,121 @@
 # Análisis de Complejidad Asintótica
 
-## 1. Comprobaciones de notación Big-O
+## 1. Comprobaciones de notación Big-O  
 
-**Funciones dadas:**
-
-- \( f(n) = n^3 + 9n^2\log(n) \)
-- \( g(n) = n^2 \log(n) \)
-
-### Comprobar si \( f(n) \in O(g(n)) \)
-
-Para que \( f(n) \in O(g(n)) \), debe existir una constante \( c > 0 \) y un \( n_0 \) tal que:
+### Caso 1  
 
 $$
-f(n) \leq c \cdot g(n) \quad \text{para todo } n \geq n_0
-$$
-
-Comparamos asintóticamente:
-
-- \( f(n) = n^3 + 9n^2 \log(n) \)
-- \( g(n) = n^2 \log(n) \)
-
-Dividimos:
+f(n) \;=\; n^{3}\;+\;9\,n^{2}\log n
+$$  
 
 $$
-\frac{f(n)}{g(n)} = \frac{n^3 + 9n^2 \log(n)}{n^2 \log(n)} = \frac{n^3}{n^2 \log(n)} + \frac{9n^2 \log(n)}{n^2 \log(n)} = \frac{n}{\log(n)} + 9
-$$
+g(n) \;=\; n^{2}\log n
+$$  
 
-Como:
-
-$$
-\lim_{n \to \infty} \left( \frac{n}{\log(n)} + 9 \right) = \infty
-$$
-
-Entonces:
-
-> **No se cumple** que \( f(n) \in O(g(n)) \)
-
-
-
-### Comprobar si \( f(n) \notin O(n^2) \)
-
-Supongamos que sí pertenece:
-
-- \( f(n) = n^3 + 9n^2\log(n) \)
-- \( h(n) = n^2 \)
-
-Comparamos:
+Cociente:
 
 $$
-\frac{f(n)}{n^2} = \frac{n^3 + 9n^2\log(n)}{n^2} = n + 9\log(n)
-$$
+\frac{f(n)}{g(n)}
+= \frac{\,n^{3}+9\,n^{2}\log n\,}{\,n^{2}\log n\,}
+= \frac{n}{\log n}+9
+$$  
 
-Y:
-
-$$
-\lim_{n \to \infty} \left(n + 9\log(n)\right) = \infty
-$$
-
-Por lo tanto:
-
-> Se confirma que \( f(n) \notin O(n^2) \)
-
----
-
-## 2. Relación entre funciones exponenciales
-
-### Funciones:
-
-- \( f(n) = 2^n \)
-- \( g(n) = 2^{2n} = (2^n)^2 \)
-
-### Comprobar si \( f(n) \in O(g(n)) \)
-
-Dividimos:
+Límite:
 
 $$
-\frac{f(n)}{g(n)} = \frac{2^n}{2^{2n}} = 2^{-n}
-$$
+\lim_{n\to\infty}\!\left(\frac{n}{\log n}+9\right)=\infty
+$$  
 
-Y:
-
-$$
-\lim_{n \to \infty} 2^{-n} = 0
-$$
-
-Por definición:
-
-> \( f(n) \in O(g(n)) \)
-
----
-
-### Comprobar si \( g(n) \in O(f(n)) \)
-
-Dividimos:
+Por lo tanto  
 
 $$
-\frac{g(n)}{f(n)} = \frac{2^{2n}}{2^n} = 2^n
+f(n)\;\notin\;O\!\bigl(n^{2}\log n\bigr)
+$$  
+
+
+### Caso 2  
+
 $$
-
-Y:
+h(n)\;=\;n^{2}
+$$  
 
 $$
-\lim_{n \to \infty} 2^n = \infty
+\frac{f(n)}{h(n)}
+= \frac{\,n^{3}+9\,n^{2}\log n\,}{\,n^{2}\,}
+= n+9\log n
+$$  
+
 $$
+\lim_{n\to\infty}\!\bigl(n+9\log n\bigr)=\infty
+$$  
 
-Por lo tanto:
+Así  
 
-> **No se cumple** que \( g(n) \in O(f(n)) \)
+$$
+f(n)\;\notin\;O\!\bigl(n^{2}\bigr)
+$$  
 
----
 
-## 📌 Conclusión
-- \( f(n) = n^3 + 9n^2 \log(n) \notin O(n^2 \log(n)) \)
-- \( f(n) \notin O(n^2) \)
-- \( f(n) = 2^n \in O(2^{2n}) \), pero \( 2^{2n} \notin O(2^n) \)
+## 2. Funciones exponenciales  
+
+$$
+f(n)=2^{\,n},
+\qquad
+g(n)=2^{\,2n}=4^{\,n}
+$$  
+
+Cociente:
+
+$$
+\frac{f(n)}{g(n)}
+= \frac{2^{\,n}}{2^{\,2n}}
+= 2^{-n}
+$$  
+
+$$
+\lim_{n\to\infty}2^{-n}=0
+$$  
+
+Luego  
+
+$$
+2^{\,n}\;\in\;O\!\bigl(2^{\,2n}\bigr)
+$$  
+
+
+Para el inverso:
+
+$$
+\frac{g(n)}{f(n)}
+= \frac{2^{\,2n}}{2^{\,n}}
+= 2^{\,n}
+$$  
+
+$$
+\lim_{n\to\infty}2^{\,n}=\infty
+$$  
+
+Por consiguiente  
+
+$$
+2^{\,2n}\;\notin\;O\!\bigl(2^{\,n}\bigr)
+$$  
+
+
+## Conclusión  
+
+$$
+f(n)=n^{3}+9\,n^{2}\log n\;\notin\;O\!\bigl(n^{2}\log n\bigr)
+$$  
+
+$$
+f(n)\;\notin\;O\!\bigl(n^{2}\bigr)
+$$  
+
+$$
+2^{\,n}\;\in\;O\!\bigl(2^{\,2n}\bigr)
+$$  
+
+$$
+2^{\,2n}\;\notin\;O\!\bigl(2^{\,n}\bigr)
+$$
