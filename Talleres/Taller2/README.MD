@@ -1,97 +1,117 @@
+# 📊 Análisis de Complejidad Asintótica
 
-## TALLER 2
+## 🧮 1. Comprobaciones de notación Big-O
 
-### Enunciado
+**Funciones dadas:**
 
-Dado:
+- \( f(n) = n^3 + 9n^2\log(n) \)
+- \( g(n) = n^2 \log(n) \)
 
-- $f(n) = n^3 + 9n^2 \log(n)$  
-- $g(n) = n^2 \log(n)$
+### ✅ Comprobar si \( f(n) \in O(g(n)) \)
 
-Comprobar:
+Para que \( f(n) \in O(g(n)) \), debe existir una constante \( c > 0 \) y un \( n_0 \) tal que:
 
-- ¿$f(n) \in \mathcal{O}(g(n))$?
-- ¿$f(n) \in \mathcal{O}(n^2)$?
+$$
+f(n) \leq c \cdot g(n) \quad \text{para todo } n \geq n_0
+$$
 
----
+Comparamos asintóticamente:
 
-## 1. Primera parte
+- \( f(n) = n^3 + 9n^2 \log(n) \)
+- \( g(n) = n^2 \log(n) \)
 
-### a) Comprobacion: ¿$f(n) \in \mathcal{O}(g(n))$?
-
-Dado:  
-$f(n) = n^3 + 9n^2 \log(n)$  
-$g(n) = n^2 \log(n)$
-
-Cociente:
+Dividimos:
 
 $$
 \frac{f(n)}{g(n)} = \frac{n^3 + 9n^2 \log(n)}{n^2 \log(n)} = \frac{n^3}{n^2 \log(n)} + \frac{9n^2 \log(n)}{n^2 \log(n)} = \frac{n}{\log(n)} + 9
 $$
 
-Cuando $n \to \infty$, $\frac{n}{\log(n)} \to \infty$, por lo tanto:
+Como:
 
 $$
-\frac{f(n)}{g(n)} \to \infty
+\lim_{n \to \infty} \left( \frac{n}{\log(n)} + 9 \right) = \infty
 $$
 
-**Esto implica que:**  
-$f(n) \notin \mathcal{O}(g(n))$
+Entonces:
+
+> ✅ **No se cumple** que \( f(n) \in O(g(n)) \)
 
 ---
 
-### b) Comprobacion: ¿$f(n) \in \mathcal{O}(n^2)$?
+### ❌ Comprobar si \( f(n) \notin O(n^2) \)
 
-Cociente:
+Supongamos que sí pertenece:
+
+- \( f(n) = n^3 + 9n^2\log(n) \)
+- \( h(n) = n^2 \)
+
+Comparamos:
 
 $$
-\frac{f(n)}{n^2} = \frac{n^3 + 9n^2 \log(n)}{n^2} = n + 9 \log(n) \to \infty
+\frac{f(n)}{n^2} = \frac{n^3 + 9n^2\log(n)}{n^2} = n + 9\log(n)
 $$
 
-**Esto implica que:**  
-$f(n) \notin \mathcal{O}(n^2)$
+Y:
+
+$$
+\lim_{n \to \infty} \left(n + 9\log(n)\right) = \infty
+$$
+
+Por lo tanto:
+
+> ✅ Se confirma que \( f(n) \notin O(n^2) \)
 
 ---
 
-## 2. Segunda parte
+## 🧠 2. Relación entre funciones exponenciales
 
-Dado:
+### Funciones:
 
-- $f(n) = 2^n$
-- $g(n) = 2^{2n} = (2^n)^2$
+- \( f(n) = 2^n \)
+- \( g(n) = 2^{2n} = (2^n)^2 \)
 
-### a) Comprobacion: ¿$f(n) \in \mathcal{O}(g(n))$?
+### ✅ Comprobar si \( f(n) \in O(g(n)) \)
+
+Dividimos:
 
 $$
-\frac{f(n)}{g(n)} = \frac{2^n}{2^{2n}} = \frac{1}{2^n} \to 0
+\frac{f(n)}{g(n)} = \frac{2^n}{2^{2n}} = 2^{-n}
 $$
 
-**Esto implica que:**  
-$f(n) \in \mathcal{O}(g(n))$, porque el cociente tiende a cero.
+Y:
+
+$$
+\lim_{n \to \infty} 2^{-n} = 0
+$$
+
+Por definición:
+
+> ✅ \( f(n) \in O(g(n)) \)
 
 ---
 
-### b) Comprobacion: ¿$g(n) \in \mathcal{O}(f(n))$?
+### ❌ Comprobar si \( g(n) \in O(f(n)) \)
+
+Dividimos:
 
 $$
-\frac{g(n)}{f(n)} = \frac{2^{2n}}{2^n} = 2^n \to \infty
+\frac{g(n)}{f(n)} = \frac{2^{2n}}{2^n} = 2^n
 $$
 
-**Esto implica que:**  
-$g(n) \notin \mathcal{O}(f(n))$, ya que el cociente crece sin límite.
+Y:
+
+$$
+\lim_{n \to \infty} 2^n = \infty
+$$
+
+Por lo tanto:
+
+> ✅ **No se cumple** que \( g(n) \in O(f(n)) \)
 
 ---
 
-## Conclusiones
+## 📌 Conclusión
 
-- En el primer caso, $f(n)$ crece más rápido que $g(n)$, por lo tanto:
-  - $f(n) \notin \mathcal{O}(g(n))$
-  - $f(n) \notin \mathcal{O}(n^2)$
-
-- En el segundo caso:
-  - $f(n) \in \mathcal{O}(g(n))$
-  - $g(n) \notin \mathcal{O}(f(n))$
-
-Esto demuestra cómo la notacion $\mathcal{O}$ permite establecer comparaciones de crecimiento entre funciones, esencial en el analisis de algoritmos.
-
----
+- \( f(n) = n^3 + 9n^2 \log(n) \notin O(n^2 \log(n)) \)
+- \( f(n) \notin O(n^2) \)
+- \( f(n) = 2^n \in O(2^{2n}) \), pero \( 2^{2n} \notin O(2^n) \)
