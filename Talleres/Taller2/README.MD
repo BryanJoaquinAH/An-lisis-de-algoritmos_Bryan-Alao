@@ -1,13 +1,13 @@
-# 📊 Análisis de Complejidad Asintótica
+# Análisis de Complejidad Asintótica
 
-## 🧮 1. Comprobaciones de notación Big-O
+## 1. Comprobaciones de notación Big-O
 
 **Funciones dadas:**
 
 - \( f(n) = n^3 + 9n^2\log(n) \)
 - \( g(n) = n^2 \log(n) \)
 
-### ✅ Comprobar si \( f(n) \in O(g(n)) \)
+### Comprobar si \( f(n) \in O(g(n)) \)
 
 Para que \( f(n) \in O(g(n)) \), debe existir una constante \( c > 0 \) y un \( n_0 \) tal que:
 
@@ -34,9 +34,9 @@ $$
 
 Entonces:
 
-> ✅ **No se cumple** que \( f(n) \in O(g(n)) \)
+> **No se cumple** que \( f(n) \in O(g(n)) \)
 
----
+
 
 ### ❌ Comprobar si \( f(n) \notin O(n^2) \)
 
@@ -59,18 +59,18 @@ $$
 
 Por lo tanto:
 
-> ✅ Se confirma que \( f(n) \notin O(n^2) \)
+> Se confirma que \( f(n) \notin O(n^2) \)
 
 ---
 
-## 🧠 2. Relación entre funciones exponenciales
+## 2. Relación entre funciones exponenciales
 
 ### Funciones:
 
 - \( f(n) = 2^n \)
 - \( g(n) = 2^{2n} = (2^n)^2 \)
 
-### ✅ Comprobar si \( f(n) \in O(g(n)) \)
+### Comprobar si \( f(n) \in O(g(n)) \)
 
 Dividimos:
 
@@ -86,11 +86,11 @@ $$
 
 Por definición:
 
-> ✅ \( f(n) \in O(g(n)) \)
+> \( f(n) \in O(g(n)) \)
 
 ---
 
-### ❌ Comprobar si \( g(n) \in O(f(n)) \)
+### Comprobar si \( g(n) \in O(f(n)) \)
 
 Dividimos:
 
@@ -106,7 +106,7 @@ $$
 
 Por lo tanto:
 
-> ✅ **No se cumple** que \( g(n) \in O(f(n)) \)
+> **No se cumple** que \( g(n) \in O(f(n)) \)
 
 ---
 
