@@ -1,121 +1,148 @@
-# Análisis de Complejidad Asintótica
+# Análisis de Complejidad Asintótica con Comentarios
+
+---
 
 ## 1. Comprobaciones de notación Big-O  
 
-### Caso 1  
+### Caso 1: Verificar si \( f(n) \in O(n^2 \log n) \)
+
+Dadas las funciones:
 
 $$
-f(n) \;=\; n^{3}\;+\;9\,n^{2}\log n
-$$  
+f(n) = n^3 + 9n^2 \log n
+\qquad \text{y} \qquad
+g(n) = n^2 \log n
+$$
+
+Para determinar si \( f(n) \in O(g(n)) \), calculamos el cociente:
 
 $$
-g(n) \;=\; n^{2}\log n
-$$  
+\frac{f(n)}{g(n)} = \frac{n^3 + 9n^2 \log n}{n^2 \log n}
+$$
 
-Cociente:
+**Paso 1: Separar términos del numerador:**
 
 $$
-\frac{f(n)}{g(n)}
-= \frac{\,n^{3}+9\,n^{2}\log n\,}{\,n^{2}\log n\,}
-= \frac{n}{\log n}+9
-$$  
+= \frac{n^3}{n^2 \log n} + \frac{9n^2 \log n}{n^2 \log n}
+$$
 
-Límite:
+**Paso 2: Simplificar cada parte:**
 
 $$
-\lim_{n\to\infty}\!\left(\frac{n}{\log n}+9\right)=\infty
-$$  
+= \frac{n}{\log n} + 9
+$$
 
-Por lo tanto  
+**Paso 3: Aplicar el límite para analizar el comportamiento asintótico:**
 
 $$
-f(n)\;\notin\;O\!\bigl(n^{2}\log n\bigr)
-$$  
+\lim_{n \to \infty} \left( \frac{n}{\log n} + 9 \right) = \infty
+$$
 
-
-### Caso 2  
+> Como el límite tiende a infinito, **no** existe una constante \( c \) tal que \( f(n) \leq c \cdot g(n) \), por tanto:
 
 $$
-h(n)\;=\;n^{2}
-$$  
+f(n) \notin O(n^2 \log n)
+$$
+
+---
+
+### Caso 2: Verificar si \( f(n) \in O(n^2) \)
+
+Usamos:
 
 $$
-\frac{f(n)}{h(n)}
-= \frac{\,n^{3}+9\,n^{2}\log n\,}{\,n^{2}\,}
-= n+9\log n
-$$  
+f(n) = n^3 + 9n^2 \log n
+\qquad \text{y} \qquad
+h(n) = n^2
+$$
+
+**Paso 1: Calcular el cociente:**
 
 $$
-\lim_{n\to\infty}\!\bigl(n+9\log n\bigr)=\infty
-$$  
+\frac{f(n)}{h(n)} = \frac{n^3 + 9n^2 \log n}{n^2}
+$$
 
-Así  
+**Paso 2: Separar términos:**
 
 $$
-f(n)\;\notin\;O\!\bigl(n^{2}\bigr)
-$$  
+= \frac{n^3}{n^2} + \frac{9n^2 \log n}{n^2}
+$$
 
-
-## 2. Funciones exponenciales  
+**Paso 3: Simplificar:**
 
 $$
-f(n)=2^{\,n},
-\qquad
-g(n)=2^{\,2n}=4^{\,n}
-$$  
+= n + 9 \log n
+$$
 
-Cociente:
+**Paso 4: Analizar el comportamiento asintótico:**
 
 $$
-\frac{f(n)}{g(n)}
-= \frac{2^{\,n}}{2^{\,2n}}
-= 2^{-n}
-$$  
+\lim_{n \to \infty} (n + 9 \log n) = \infty
+$$
+
+> Nuevamente, el límite tiende a infinito, por lo que:
 
 $$
-\lim_{n\to\infty}2^{-n}=0
-$$  
+f(n) \notin O(n^2)
+$$
 
-Luego  
+---
+
+## 2. Comparación de funciones exponenciales  
+
+Dadas:
 
 $$
-2^{\,n}\;\in\;O\!\bigl(2^{\,2n}\bigr)
-$$  
+f(n) = 2^n, \quad g(n) = 2^{2n} = 4^n
+$$
 
+### Verificar si \( f(n) \in O(g(n)) \)
 
-Para el inverso:
+**Paso 1: Cociente:**
 
 $$
-\frac{g(n)}{f(n)}
-= \frac{2^{\,2n}}{2^{\,n}}
-= 2^{\,n}
-$$  
+\frac{f(n)}{g(n)} = \frac{2^n}{2^{2n}} = 2^{-n}
+$$
+
+**Paso 2: Aplicar el límite:**
 
 $$
-\lim_{n\to\infty}2^{\,n}=\infty
-$$  
+\lim_{n \to \infty} 2^{-n} = 0
+$$
 
-Por consiguiente  
+> Como el límite tiende a 0, entonces sí existe una constante que acote a \( f(n) \) por \( g(n) \), por tanto:
 
 $$
-2^{\,2n}\;\notin\;O\!\bigl(2^{\,n}\bigr)
-$$  
+f(n) \in O(2^{2n})
+$$
 
+---
 
-## Conclusión  
+### Verificar si \( g(n) \in O(f(n)) \)
+
+**Paso 1: Cociente inverso:**
 
 $$
-f(n)=n^{3}+9\,n^{2}\log n\;\notin\;O\!\bigl(n^{2}\log n\bigr)
-$$  
+\frac{g(n)}{f(n)} = \frac{2^{2n}}{2^n} = 2^n
+$$
+
+**Paso 2: Aplicar el límite:**
 
 $$
-f(n)\;\notin\;O\!\bigl(n^{2}\bigr)
-$$  
+\lim_{n \to \infty} 2^n = \infty
+$$
+
+> Como el límite tiende a infinito, **no** existe una constante que acote a \( g(n) \) por \( f(n) \), entonces:
 
 $$
-2^{\,n}\;\in\;O\!\bigl(2^{\,2n}\bigr)
-$$  
+2^{2n} \notin O(2^n)
+$$
 
-$$
-2^{\,2n}\;\notin\;O\!\bigl(2^{\,n}\bigr)
-$$
+---
+
+## Conclusiones
+
+- \( f(n) = n^3 + 9n^2 \log n \notin O(n^2 \log n) \)
+- \( f(n) \notin O(n^2) \)
+- \( f(n) = 2^n \in O(2^{2n}) \)
+- \( 2^{2n} \notin O(2^n) \)
