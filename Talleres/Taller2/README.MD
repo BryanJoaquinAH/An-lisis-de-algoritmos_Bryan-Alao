@@ -38,7 +38,7 @@ Entonces:
 
 
 
-### ❌ Comprobar si \( f(n) \notin O(n^2) \)
+### Comprobar si \( f(n) \notin O(n^2) \)
 
 Supongamos que sí pertenece:
 
@@ -111,7 +111,6 @@ Por lo tanto:
 ---
 
 ## 📌 Conclusión
-
 - \( f(n) = n^3 + 9n^2 \log(n) \notin O(n^2 \log(n)) \)
 - \( f(n) \notin O(n^2) \)
 - \( f(n) = 2^n \in O(2^{2n}) \), pero \( 2^{2n} \notin O(2^n) \)
