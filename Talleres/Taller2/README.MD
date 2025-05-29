@@ -44,7 +44,6 @@ $$
 f(n) \notin O(n^2 \log n)
 $$
 
----
 
 ### Caso 2: Verificar si \( f(n) \in O(n^2) \)
 
@@ -86,7 +85,6 @@ $$
 f(n) \notin O(n^2)
 $$
 
----
 
 ## 2. Comparación de funciones exponenciales  
 
@@ -116,7 +114,6 @@ $$
 f(n) \in O(2^{2n})
 $$
 
----
 
 ### Verificar si \( g(n) \in O(f(n)) \)
 
@@ -138,11 +135,20 @@ $$
 2^{2n} \notin O(2^n)
 $$
 
----
 
 ## Conclusiones
+$$
+f(n)=n^{3}+9\,n^{2}\log n\;\notin\;O\!\bigl(n^{2}\log n\bigr)
+$$  
 
-- \( f(n) = n^3 + 9n^2 \log n \notin O(n^2 \log n) \)
-- \( f(n) \notin O(n^2) \)
-- \( f(n) = 2^n \in O(2^{2n}) \)
-- \( 2^{2n} \notin O(2^n) \)
+$$
+f(n)\;\notin\;O\!\bigl(n^{2}\bigr)
+$$  
+
+$$
+2^{\,n}\;\in\;O\!\bigl(2^{\,2n}\bigr)
+$$  
+
+$$
+2^{\,2n}\;\notin\;O\!\bigl(2^{\,n}\bigr)
+$$
