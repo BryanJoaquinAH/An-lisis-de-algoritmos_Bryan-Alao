@@ -9,7 +9,7 @@
 ## Introducción
 
 Esta semana llevamos el paradigma de **Divide y Vencerás** a otro nivel:  
-📊 **¡Ordenar grandes cantidades de datos de forma eficiente!**
+**¡Ordenar grandes cantidades de datos de forma eficiente!**
 
 Aprendimos dos de los algoritmos más conocidos y usados en programación:
 
@@ -60,7 +60,7 @@ Aprendimos dos de los algoritmos más conocidos y usados en programación:
 
 2. **Vencer:**  
    - Aplica **Quicksort recursivamente** a cada sublista  
-   - "¡Hagan lo mismo!" 🔄
+   - "¡Hagan lo mismo!" 
 
 3. **Combinar:**  
    - **No es necesario** combinar.  
@@ -92,7 +92,7 @@ Aprendimos dos de los algoritmos más conocidos y usados en programación:
 | Enfoque               | Divide → Vencer + Combinar | Divide → Vencer (in-place) |
 | Complejidad promedio  | Θ(n log n)               | O(n log n)                  |
 | Peor caso             | Θ(n log n)               | O(n²)                       |
-| Estable               | ✅ Sí                     | ❌ No                       |
+| Estable               |  Sí                      | No                       |
 | Uso en práctica       | Muy bueno para listas enlazadas | Más usado en arrays         |
 | Espacio adicional     | Sí (usa memoria extra)   | No (in-place)              |
 
