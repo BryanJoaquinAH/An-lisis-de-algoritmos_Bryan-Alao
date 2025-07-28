@@ -18,7 +18,6 @@ Son algoritmos que resuelven problemas de optimización **eligiendo siempre la m
 > ⚠️ **Advertencia:** No siempre garantizan la **mejor solución global**.  
 > Una buena decisión local puede no ser la mejor a largo plazo.
 
----
 
 ### Grafos no Dirigidos
 
@@ -33,7 +32,6 @@ En los **grafos no dirigidos**, las conexiones son **bidireccionales**, como cal
 
 Es muy útil en problemas reales como el **diseño de redes eléctricas, de transporte o telecomunicaciones**.
 
----
 
 ##  Ejemplo Práctico: El Algoritmo de Dar el Cambio
 
@@ -43,6 +41,7 @@ Un clásico ejemplo de algoritmo voraz:
 ###  Estrategia Voraz
 
 En cada paso, se toma la **moneda de mayor valor** que aún no exceda la cantidad restante.
+---
 
 ### Pseudocódigo
 
