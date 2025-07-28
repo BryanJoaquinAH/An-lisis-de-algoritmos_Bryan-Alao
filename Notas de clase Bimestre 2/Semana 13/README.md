@@ -19,8 +19,6 @@
 
 > Este método reduce el espacio de búsqueda en cada paso, siendo **más eficiente** que ordenar completamente la lista.
 
----
-
 ## Multiplicación de Matrices
 
 ### Algoritmo Clásico
@@ -39,16 +37,13 @@ for i in range(n):
 ## Algoritmo de Strassen
 
 Un enfoque de **Divide y Vencerás** que **reduce el número de multiplicaciones necesarias**.
-
 ---
-
 ### Estrategia
 
 Divide cada matriz de `n x n` en **cuatro submatrices** de `n/2 x n/2`.
 
 Realiza **7 multiplicaciones recursivas** y varias **sumas/restas** de submatrices.
 
----
 
 ### Complejidad
 
