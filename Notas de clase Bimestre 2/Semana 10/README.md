@@ -19,7 +19,6 @@ A diferencia de los **grafos no dirigidos**, aquí las conexiones (llamadas **ar
 
 >  No se puede ir de `w` a `v` a menos que exista otro arco que lo permita.
 
----
 
 ### Grafos Ponderados
 
@@ -28,7 +27,6 @@ Al igual que antes, cada arco puede tener un **peso o costo**, que representa:
 - ⏱️ Tiempo
 - 💰 Costo, etc.
 
----
 
 ## El Problema del Camino Mínimo
 
@@ -40,7 +38,6 @@ Esta es una tarea común en:
 - Ruteo de redes
 - Juegos de laberintos o mapas
 
----
 
 ## Análisis del Algoritmo de Dijkstra
 
